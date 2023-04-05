@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Guessing Game</title>
+	<script>
+		var secretNumber = Math.floor(Math.random() * 10) + 1;
+		var guessCount = 0;
+		
+		function guessNumber() {
+			var guess = document.getElementById("guess").value;
+			guessCount++;
+			
+			if (guess == secretNumber) {
+				alert("Congratulations! You guessed the number in " + guessCount + " guesses.");
+			} else if (guess < secretNumber) {
+				alert("Too low. Try again.");
+			} else {
+				alert("Too high. Try again.");
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>Guessing Game</h1>
+	<p>I'm thinking of a number between 1 and 10. Can you guess what it is?</p>
+	<input type="text" id="guess">
+	<button onclick="guessNumber()">Guess</button>
+</body>
+</html>
